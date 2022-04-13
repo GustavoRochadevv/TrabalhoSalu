@@ -4,34 +4,37 @@ using namespace std;
 
 int main()
 {
+    setlocale(LC_ALL, "portuguese");
 
-    float precoGasolina, tanque , distancia , consumo;
-    float resultadoLitros , resultadoTanque , resultadoValorTotal;
+    float   precoGasolina,
+            tamanhoTanque,
+            distanciaPercorrida,
+            consumoMedio,
+            qtdLitros,
+            valorTotal;
 
-    cout << "informe o preco da gasolina em R$?" << endl;
+    int qtdAbastecimento;
+
+    cout <<"------------------------------------------------------" << endl;
+
+    cout << "Informe o preco da gasolina (em R$): ";
     cin >> precoGasolina;
-    cout << "informe o tamanho do tanque em litros?" << endl;
-    cin >> tanque;
-    cout << "informe a kilometragem percorrida?" << endl;
-    cin >> distancia;
-    cout << "informe o consumo( km / litro) " << endl;
-    cin >> consumo;
+    cout << "Informe o tamanho do tanque (em litros): ";
+    cin >> tamanhoTanque;
+    cout << "Informe a kilometragem percorrida (em kilômetros): ";
+    cin >> distanciaPercorrida;
+    cout << "Informe o consumo(Km/litro): ";
+    cin >> consumoMedio;
 
-    resultadoLitros = distancia / consumo;
-    cout << "quantidade de litros necessarios e :" << resultadoLitros;
+    qtdLitros = (distanciaPercorrida / consumoMedio);
+    qtdAbastecimento = (distanciaPercorrida / tamanhoTanque);
+    valorTotal = (qtdLitros * precoGasolina);
 
-    resultadoTanque = resultadoLitros / tanque ;
-    cout << "quantidades abastecidas e :" << resultadoTanque;
+    cout << "\nA quantidade de litros necessários é: " << qtdLitros << endl;
+    cout << "A quantidade de abastecimentos é: " << qtdAbastecimento << endl;
+    cout << "O valor total: " << valorTotal << " R$" << endl;
 
-    resultadoValorTotal = resultadoLitros * precoGasolina;
-    cout << "o valor total gasto e:" << resultadoTanque;
-
-
-
-
-
-
-
+    cout <<"------------------------------------------------------" << endl;
 
     return 0;
 }
